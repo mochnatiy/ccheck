@@ -4,9 +4,12 @@ require File.expand_path('../fixtures.rb', __FILE__)
 
 class ProviderTest < Test::Unit::TestCase
   def test_identity
-    visas = Fixtures::Valid.get[:visa]
-    visas.each do |number|
-      assert_equal(Provider.identity(number), 'Visa')
+    Fixtures::Unknown.get.each do |fixture|
+      assert_equal(Provider.identity(fixture), 'Unknown')
+    end
+
+    Fixtures::Known.get.each do |fixture|
+      assert_equal(Provider.identity(fixture[:number]), fixture[:result])
     end
   end
 end
