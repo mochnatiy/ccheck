@@ -1,4 +1,4 @@
 class Validator
-  def validate
+  def self.validate(number)
   end
 end

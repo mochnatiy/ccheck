@@ -6,8 +6,7 @@ class ValidatorTest < Test::Unit::TestCase
   def test_validate
     visas = Fixtures::Valid.get[:visa]
     visas.each do |number|
-      validator = Validator.new(number)
-      assert_equal(Validator.validate, 'valid')
+      assert_equal(Validator.validate(number), 'valid')
     end
   end
 end

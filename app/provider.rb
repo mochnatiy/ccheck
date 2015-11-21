@@ -1,4 +1,4 @@
 class Provider
-  def identity
+  def self.identity(number)
   end
 end

@@ -6,8 +6,7 @@ class ProviderTest < Test::Unit::TestCase
   def test_identity
     visas = Fixtures::Valid.get[:visa]
     visas.each do |number|
-      provider = Provider.new(number)
-      assert_equal(provider.identity, 'Visa')
+      assert_equal(Provider.identity(number), 'Visa')
     end
   end
 end
