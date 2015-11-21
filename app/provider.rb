@@ -15,6 +15,7 @@ class Provider
       end
     end
 
+    # TODO: Possibly add the regexp check
     private
     def check_visa(number)
       if number[0].to_i == 4 && (number.size == 16 || number.size == 13)

@@ -4,9 +4,12 @@ require File.expand_path('../fixtures.rb', __FILE__)
 
 class ValidatorTest < Test::Unit::TestCase
   def test_validate
-    visas = Fixtures::Valid.get[:visa]
-    visas.each do |number|
-      assert_equal(Validator.validate(number), 'valid')
+    Fixtures::Valid.get.each do |fixture|
+      assert_equal(Validator.validate(fixture), 'valid number')
+    end
+
+    Fixtures::Invalid.get.each do |fixture|
+      assert_equal(Validator.validate(fixture), 'invalid number')
     end
   end
 end
