@@ -1,4 +1,6 @@
 class Validator
-  def self.validate(number)
+  class << self
+    def validate(number)
+    end
   end
 end
