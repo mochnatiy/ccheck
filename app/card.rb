@@ -7,7 +7,10 @@ class Card
   end
 
   def info
-    return 'Enter a credit card number' unless /^(?<num>\d+)$/ =~ @number
+    unless /^(?<num>\d+)$/ =~ @number
+      return 'Entered value is not a credit card number'
+    end
+
     "#{Provider.identity(@number)}, #{Validator.validate(@number)}"
   end
 end

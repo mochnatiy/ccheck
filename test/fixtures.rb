@@ -72,7 +72,7 @@ module Fixtures
         { number: '4532589937743835', info: 'Visa, invalid number' },
         { number: '2440009816826', info: 'Unknown, invalid number' },
         { number: '5356777735465733', info: 'MasterCard, invalid number' },
-        { number: '34fg343445556', info: 'Enter a credit card number' }
+        { number: '44fg343445556', info: 'Entered value is not a credit card number' }
       ]
     end
   end
